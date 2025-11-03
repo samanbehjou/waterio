@@ -1,0 +1,9 @@
+*.swp
+build/
+
+dist/
+*.egg-info/
+*.egg
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
