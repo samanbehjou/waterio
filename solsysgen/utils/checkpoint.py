@@ -1,13 +1,17 @@
-import numpy as np
-from pathlib import Path
+# examples/checkpoint_demo.py
+from solsysgen import Sun, Planet, SolarSystem
+from solsysgen.utils.checkpoint import save_checkpoint, load_checkpoint
 
-def save_checkpoint(path: str | Path, data: dict) -> None:
-    """Save dictionary of arrays/scalars to a .npz file."""
-    path = Path(path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    np.savez_compressed(path, **data)
+ss = SolarSystem(
+    Sun(),
+    [
+        Planet("Earth", 5.972e24, 1.496e11, 6.371e6),
+        Planet("Mars", 6.39e23, 2.279e11, 3.3895e6),
+    ],
+)
 
-def load_checkpoint(path: str | Path) -> dict:
-    """Load dictionary from a .npz file."""
-    with np.load(path, allow_pickle=False) as f:
-        return {k: f[k] for k in f.files}
+data = {"summary": ss.summary()}
+save_checkpoint("checkpoints/solsysgen_demo.npz", data)
+loaded = load_checkpoint("checkpoints/solsysgen_demo.npz")
+print(loaded["summary"])
+
