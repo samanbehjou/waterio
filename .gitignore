@@ -8,3 +8,21 @@ __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 git.txt
+# Lecture materials & notebooks
+Python3_Lecture_*.pdf
+*.ipynb
+.ipynb_checkpoints/
+
+# local env / secrets
+myenv.yml
+git.txt
+
+# build artifacts / local Python cache
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+*.npz
+
+# data
+*.h5
