@@ -1,3 +1,24 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# C extensions
+*.so
+
+# Build / dist
+build/
+dist/
+*.egg-info/
+
+# VS Code
+.vscode/
+
+# pytest cache
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
 
 # build artifacts
 *.egg-info/
