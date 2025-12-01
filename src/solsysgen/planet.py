@@ -59,3 +59,25 @@ class Planet:
             f"Planet {self.name}: mass={self.mass:.2f} M⊕, "
             f"radius={self.radius:.2f} R⊕, distance={self.distance} AU"
         )
+
+    def orbital_period_kepler(self, mu: float) -> float:
+        """
+        Compute orbital period from Kepler's third law for a circular orbit.
+
+        Parameters
+        ----------
+        mu : float
+            Standard gravitational parameter G * M_sun in consistent units.
+
+        Returns
+        -------
+        float
+            Orbital period.
+        """
+        # distance is the semi-major axis a
+        if self.distance <= 0:
+            raise ValueError("distance must be positive")
+        from math import pi, sqrt
+
+        a = self.distance
+        return 2 * pi * sqrt(a**3 / mu)
