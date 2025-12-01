@@ -51,11 +51,16 @@ class Planet:
         """
         self.angle += self.velocity * dt
         self.position = np.array(
-            [self.distance * np.cos(self.angle), self.distance * np.sin(self.angle)]
+            [
+                self.distance * np.cos(self.angle),
+                self.distance * np.sin(self.angle),
+            ]
         )
 
-    def __str__(self):
+    def __str__(self) -> str:
         return (
-            f"Planet {self.name}: mass={self.mass:.2f} M⊕, "
-            f"radius={self.radius:.2f} R⊕, distance={self.distance} AU"
+            f"Planet {self.name}: "
+            f"mass={self.mass:.2f} M⊕, "
+            f"radius={self.radius:.2f} R⊕, "
+            f"distance={self.distance} AU"
         )

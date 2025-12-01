@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class Sun:
     """
     Represents a star in the solar system.
@@ -31,4 +32,3 @@ class Sun:
             f"radius={self.radius:.2f} R☉, "
             f"luminosity={self.luminosity:.2f} L☉"
         )
-

@@ -1,7 +1,5 @@
-import numpy as np
-
-from .sun import Sun
 from .planet import Planet
+from .sun import Sun
 
 
 class SolarSystem:

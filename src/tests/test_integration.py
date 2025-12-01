@@ -1,6 +1,6 @@
-from solsysgen.sun import Sun
 from solsysgen.planet import Planet
 from solsysgen.solar_system import SolarSystem
+from solsysgen.sun import Sun
 
 
 def test_solar_system():
@@ -11,4 +11,3 @@ def test_solar_system():
     system.update(dt=0.1)
     assert len(system.planets) == 1
     assert system.planets[0].name == "Earth"
-
