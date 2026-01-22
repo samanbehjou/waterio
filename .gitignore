@@ -1,33 +1,23 @@
-# Python
+# Python bytecode
 __pycache__/
 *.py[cod]
-*$py.class
 
-# Virtualenv / tools
-.venv/
-venv/
-.env/
-.mypy_cache/
-.pytest_cache/
-.ruff_cache/
-.coverage
-htmlcov/
+# Compiled extensions
+*.so
+*.pyd
+*.dll
 
-# Builds / packaging
+# Build / packaging
 build/
 dist/
 *.egg-info/
-*.so
-*.pyd
-*.dylib
 
-# IDE
+# Test / tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors
 .vscode/
-.idea/
-
-# OS
-.DS_Store
-
-# Project-specific (stray file you removed earlier)
-src/waterio/1
+.ipynb_checkpoints/
 
