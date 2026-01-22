@@ -10,7 +10,6 @@ repos:
       - id: isort
         args: ["--profile", "black"]
 
-
   - repo: local
     hooks:
       - id: pytest
