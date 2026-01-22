@@ -21,3 +21,4 @@ dist/
 .vscode/
 .ipynb_checkpoints/
 
+src/waterio/_fast.cpp
