@@ -6,7 +6,6 @@ Public API:
     load_checkpoint(path) -> dict[str, np.ndarray]
 """
 
-from ._core import Counter
-from .iodata import load_checkpoint, save_checkpoint
+from solsysgen.iodata import load_checkpoint, save_checkpoint
 
-__all__ = ["save_checkpoint", "load_checkpoint", "Counter"]
+__all__ = ["save_checkpoint", "load_checkpoint"]
