@@ -1,6 +1,3 @@
-default_language_version:
-  python: python3.10
-
 repos:
   - repo: https://github.com/psf/black
     rev: 24.4.2
@@ -13,11 +10,12 @@ repos:
       - id: isort
         args: ["--profile", "black"]
 
+
   - repo: local
     hooks:
       - id: pytest
-        name: pytest (py310)
-        entry: python3.10 -m pytest
+        name: pytest
+        entry: python3 -m pytest
         language: system
         pass_filenames: false
         always_run: true
