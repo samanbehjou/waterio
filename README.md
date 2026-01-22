@@ -12,3 +12,4 @@ save_checkpoint("ckpt.npz", a=np.arange(5), b=np.ones((2,3)))
 data = load_checkpoint("ckpt.npz")
 print(data["a"], data["b"].shape)
 
+# test
