@@ -1,6 +1,7 @@
 # Python bytecode
 __pycache__/
 *.pyc
+src/waterio/1
 
 # Compiled extensions
 *.so
