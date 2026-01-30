@@ -1,57 +1,60 @@
-# Python bytecode
+# ======================
+# Python
+# ======================
 __pycache__/
 *.py[cod]
+*.pyo
 
-# Compiled extensions
+# ======================
+# Compiled / native
+# ======================
 *.so
 *.pyd
 *.dll
+*.o
+*.a
 
-# Build / packaging
+# ======================
+# Build & packaging
+# ======================
 build/
 dist/
 *.egg-info/
 
+# ======================
+# Cython generated
+# ======================
+*.c
+
+# ======================
 # Test / tooling caches
+# ======================
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
 
-# Editors
+# ======================
+# Editors / notebooks
+# ======================
 .vscode/
 .ipynb_checkpoints/
 
+# ======================
+# Project-specific
+# ======================
+# Optional fast backend source artifact
 src/waterio/_fast.cpp
-# Python
-__pycache__/
-*.pyc
-*.pyo
-
-# Builds
-build/
-dist/
-*.so
-*.o
-*.a
-
-# Packaging
-*.egg-info/
-
-# Cython generated
-*.c
-__pycache__/
-*.pyc
-*.pyo
-build/
-dist/
-*.egg-info/
-*.so
 
 # Generated example artifacts
 examples/positions_ckpt.npz
 
-# MkDocs build
+# ======================
+# MkDocs
+# ======================
 site/
 
+# ======================
 # Generated data
+# ======================
 *.npz
+
