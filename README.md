@@ -14,6 +14,7 @@ The project is intentionally minimal and educational:
 It focuses on **clarity**, **determinism**, and **reproducibility**, rather than
 physical completeness.
 
+
 ---
 
 ## Project structure
@@ -38,6 +39,7 @@ SolsysGen/
 - Build artifacts (`build/`, `*.so`, `__pycache__/`, `*.egg-info/`) are intentionally excluded from version control.
 - The project functions fully in **pure Python** and does not require compiled extensions.
 
+---
 
 ## SolsysGen
 
@@ -61,7 +63,7 @@ A planet on a **2D circular orbit**, defined by:
 
 - orbital distance  
 - phase angle (initial position)  
-- orbital period and orbital speed (derived from Kepler’s third law)  
+- orbital period and orbital speed (derived from **Kepler’s third law**)  
 
 The planet model is intentionally simple, stable, and deterministic.
 
@@ -90,7 +92,7 @@ SolsysGen uses **Kepler’s third law** for circular two-body orbits to compute:
 
 Implementation details:
 
-- implemented in pure Python  
+- implemented in **pure Python**  
 - optional native or accelerated backends may be used if available  
 - this is **not** an N-body integrator  
 
@@ -157,11 +159,13 @@ Each example demonstrates a **single focused concept**.
 
 A full guided walkthrough is provided as a Jupyter notebook:
 
+```bash
 solsysgen_tutorial.ipynb
+```
 
----
+-
 
-## It demonstrates:
+### It demonstrates:
 
 - system generation
 - time stepping
@@ -179,19 +183,20 @@ This notebook is suitable for:
 
 ## Installation
 
-Basic installation
+### Basic installation
 
 ```bash
 pip install -e .
 ```
 
-This installs the pure-Python implementation.
+This installs the **pure-Python implementation**.
 
+-
 
-Optional native acceleration
+### Optional native acceleration
 
 If a native or Cython backend is present, it will be used automatically.
-The project functions fully without it.
+The project functions fully **without** it.
 
 ---
 
@@ -199,12 +204,15 @@ The project functions fully without it.
 
 API documentation is generated from docstrings using MkDocs:
 
-**mkdocs serve**
+```bash
+mkdocs serve
+```
 
 Then open:
 
 http://127.0.0.1:8000/
 
+---
 
 ## Testing
 
@@ -222,7 +230,7 @@ pytest
 - system stepping
 - JSON and checkpoint roundtrips
 
-
+---
 ### Intended use
 
 SolsysGen and WaterIO are suitable for:
