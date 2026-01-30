@@ -147,17 +147,21 @@ python examples/checkpoint_positions_npz.py
 python examples/cython_planet_smoke.py
 ```
 
+
+
 Each example demonstrates a **single focused concept**.
 
+---
 
-
-Tutorial notebook
+## Tutorial notebook
 
 A full guided walkthrough is provided as a Jupyter notebook:
 
 solsysgen_tutorial.ipynb
 
-It demonstrates:
+---
+
+## It demonstrates:
 
 - system generation
 - time stepping
@@ -171,12 +175,15 @@ This notebook is suitable for:
 - self-guided learning
 - grading or review
 
+---
 
-Installation
+## Installation
 
 Basic installation
 
+```bash
 pip install -e .
+```
 
 This installs the pure-Python implementation.
 
@@ -186,25 +193,28 @@ Optional native acceleration
 If a native or Cython backend is present, it will be used automatically.
 The project functions fully without it.
 
+---
 
-Documentation
+## Documentation
 
 API documentation is generated from docstrings using MkDocs:
 
-mkdocs serve
+**mkdocs serve**
 
 Then open:
 
 http://127.0.0.1:8000/
 
 
-Testing
+## Testing
 
 Run the test suite with:
 
+```bash
 pytest
+```
 
-Tests cover:
+### Tests cover:
 
 - Kepler formulas
 - model behavior
@@ -213,7 +223,7 @@ Tests cover:
 - JSON and checkpoint roundtrips
 
 
-Intended use
+### Intended use
 
 SolsysGen and WaterIO are suitable for:
 
