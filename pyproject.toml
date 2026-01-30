@@ -1,26 +1,40 @@
-
 [build-system]
 requires = ["setuptools>=68", "wheel", "Cython>=0.29", "numpy>=1.24"]
 build-backend = "setuptools.build_meta"
 
-[tool.scikit-build]
-build-dir = "build/{wheel_tag}"
-
-
-
 [project]
-name = "waterio"
+name = "solsysgen"
 version = "0.1.0"
-description = "Read/write NumPy arrays to/from a checkpoint file."
+description = "Solar system generator using a simple 2D heliocentric model with circular orbits (Kepler’s third law)."
 readme = "README.md"
-requires-python = ">=3.9"
-dependencies = ["numpy>=1.24"]
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
 
 authors = [
-    { name = "Saman", email = "s.behjoo@gmai.com" },
+  { name = "Saman Behjou", email = "s.behjoo@gmail.com" }
 ]
 
-license = { file = "LICENSE" }
+dependencies = ["numpy>=1.24"]
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+  "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+dev = [
+  "pytest>=7",
+  "ruff>=0.4",
+  "mypy>=1.7",
+]
+notebook = [
+  "jupyter",
+  "matplotlib>=3.7",
+]
 
 [tool.setuptools]
 package-dir = { "" = "src" }
@@ -29,6 +43,12 @@ package-dir = { "" = "src" }
 where = ["src"]
 include = ["solsysgen*", "waterio*"]
 
-[project.optional-dependencies]
-test = ["pytest"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I", "B"]
+fix = true
 

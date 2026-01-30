@@ -1,3 +1,4 @@
+# solsysgen/iodata.py
 from __future__ import annotations
 
 from pathlib import Path
@@ -13,17 +14,12 @@ def save_checkpoint(path: str | Path, **arrays: np.ndarray) -> None:
         raise ValueError("Provide at least one array as a keyword argument.")
     for k, v in arrays.items():
         if not isinstance(v, np.ndarray):
-            raise TypeError(
-                f"Value for key '{k}' must be a NumPy ndarray, got {type(v)}"
-            )
+            raise TypeError(f"'{k}' must be a numpy.ndarray, got {type(v)}")
     np.savez_compressed(path, **arrays)
 
 
 def load_checkpoint(path: str | Path) -> Dict[str, np.ndarray]:
-    """
-    Load arrays from a compressed NPZ
-    checkpoint created by save_checkpoint.
-    """
+    """Load arrays from a compressed NPZ checkpoint created by save_checkpoint()."""
     path = Path(path)
     if not path.exists():
         raise FileNotFoundError(path)

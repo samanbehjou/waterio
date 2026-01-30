@@ -22,3 +22,36 @@ dist/
 .ipynb_checkpoints/
 
 src/waterio/_fast.cpp
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Builds
+build/
+dist/
+*.so
+*.o
+*.a
+
+# Packaging
+*.egg-info/
+
+# Cython generated
+*.c
+__pycache__/
+*.pyc
+*.pyo
+build/
+dist/
+*.egg-info/
+*.so
+
+# Generated example artifacts
+examples/positions_ckpt.npz
+
+# MkDocs build
+site/
+
+# Generated data
+*.npz

@@ -1,0 +1,17 @@
+site_name: solsysgen docs
+theme:
+  name: material
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: numpy
+            show_signature_annotations: true
+            show_source: false
+
+nav:
+  - Home: index.md
+  - solsysgen: solsysgen.md
+  - waterio: waterio.md
