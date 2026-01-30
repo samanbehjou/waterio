@@ -1,4 +1,8 @@
+
 # solsysgen
+
+## Public API
+::: solsysgen
 
 ## Constants
 ::: solsysgen.constants
@@ -20,3 +24,4 @@
 
 ## Checkpoints (re-export)
 ::: solsysgen.checkpoint
+

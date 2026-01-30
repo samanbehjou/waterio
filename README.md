@@ -1,7 +1,9 @@
-# SolsysGen
+# SolsysGen & WaterIO
 
 **SolsysGen** is a small Python library for building and simulating simple
-heliocentric planetary systems using **2D circular Keplerian orbits**.
+heliocentric planetary systems using **2D circular Keplerian orbits**.  
+**WaterIO** is a lightweight helper module for checkpointing NumPy arrays to
+compressed `.npz` files.
 
 The project is intentionally minimal and educational:
 
@@ -9,106 +11,127 @@ The project is intentionally minimal and educational:
 - no orbital perturbations  
 - no external physics engines  
 
-It focuses on **clarity**, **determinism**, and **easy experimentation**.
+It focuses on **clarity**, **determinism**, and **reproducibility**, rather than
+physical completeness.
 
 ---
 
-## Project layout
+## Project structure
 
-
-
+```text
 SolsysGen/
 ├── src/
-│ ├── solsysgen/ # Core simulation & data model
-│ └── waterio/ # Optional checkpoint / I/O helpers
-├── examples/ # Runnable example scripts
-├── tests/ # Pytest test suite
-├── docs/ # MkDocs API documentation
+│   ├── solsysgen/          # Core simulation & data model
+│   └── waterio/            # Optional checkpoint / I/O helpers
+├── docs/                   # MkDocs API documentation
+├── examples/               # Runnable example scripts
+├── tests/                  # Pytest test suite
 ├── mkdocs.yml
 ├── pyproject.toml
 └── README.md
 
 
-**Notes**
-- Optional native / Cython acceleration lives next to the Python code.
-- Build artifacts (`build/`, `*.so`, `__pycache__/`, `*.egg-info/`) are not committed.
 
----
+### Notes
+
+- Optional native or Cython-based acceleration lives alongside the Python code.
+- Build artifacts (`build/`, `*.so`, `__pycache__/`, `*.egg-info/`) are intentionally excluded from version control.
+- The project functions fully in **pure Python** and does not require compiled extensions.
+
+
+## SolsysGen
+
+SolsysGen provides a small set of building blocks for heliocentric simulations.
 
 ## Core concepts
 
 ### Sun
-Represents the central body with:
-- mass
-- radius
-- luminosity
+Represents the central body (e.g. a star), defined by:
 
-All quantities are stored in **SI units**.
+- mass  
+- radius  
+- luminosity  
+
+All quantities are stored internally in **SI units**.
 
 ---
 
 ### Planet
 A planet on a **2D circular orbit**, defined by:
-- orbital distance
-- phase angle (initial position)
-- orbital period and speed (derived from Kepler’s third law)
 
-The planet model is intentionally simple and stable.
+- orbital distance  
+- phase angle (initial position)  
+- orbital period and orbital speed (derived from Kepler’s third law)  
+
+The planet model is intentionally simple, stable, and deterministic.
 
 ---
 
 ### SolarSystem
 A container holding:
-- one `Sun`
-- a list of `Planet` objects
 
-Provides:
-- time stepping
-- access to current positions
-- JSON-friendly serialization
+- one `Sun`  
+- a list of `Planet` objects  
+
+It provides:
+
+- explicit time stepping  
+- access to current positions  
+- JSON-friendly serialization  
 
 ---
 
 ## Orbital mechanics
 
-- Uses **Kepler’s third law** for circular two-body orbits
-- Computes:
-  - orbital period from distance
-  - circular orbital speed
-- Implemented in pure Python  
-- Optional native / accelerated backends may be used if available
+SolsysGen uses **Kepler’s third law** for circular two-body orbits to compute:
 
-This is **not** an N-body integrator.
+- orbital period from distance  
+- circular orbital speed  
+
+Implementation details:
+
+- implemented in pure Python  
+- optional native or accelerated backends may be used if available  
+- this is **not** an N-body integrator  
 
 ---
 
 ## Procedural generation
 
-SolsysGen can generate deterministic, visually plausible systems:
+SolsysGen can generate deterministic, visually plausible systems using:
 
-- logarithmically spaced orbital distances
+- logarithmically spaced orbital distances  
 - simple planet type classification:
-  - rocky
-  - gas giant
-  - ice giant
-  - dwarf
-- rough mass and radius heuristics per type
+  - rocky  
+  - gas giant  
+  - ice giant  
+  - dwarf  
+- rough mass and radius heuristics per type  
 
-This is intended for demos, testing, and visualization — **not scientific realism**.
+This functionality is intended for **demos, testing, and visualization**, not scientific realism.
 
 ---
 
 ## I/O and checkpoints
 
-### JSON
-Solar systems can be exported and reloaded via JSON for reproducibility.
+### JSON export
+Solar systems can be exported and reloaded via JSON for reproducibility, including:
+
+- system structure  
+- planet ordering  
+- orbital parameters  
+
+This allows generated systems to be saved and reused.
+
+---
 
 ### NPZ checkpoints (optional)
 The `waterio` module provides helpers to:
-- save NumPy arrays to compressed `.npz` files
-- reload them safely for analysis or visualization
 
-This is useful for storing time-series data such as planet positions.
+- save NumPy arrays to compressed `.npz` files  
+- reload them safely for analysis or visualization  
+
+This is especially useful for storing time-series data, such as planet positions over time.
 
 ---
 
@@ -122,47 +145,87 @@ python examples/track_one_planet.py
 python examples/json_roundtrip_check.py
 python examples/checkpoint_positions_npz.py
 python examples/cython_planet_smoke.py
-
 ```
 
-## Testing
+Each example demonstrates a **single focused concept**.
 
-### Run the test suite with:
 
-```bash
-pytest
-```
 
-Tests cover:
-- Kepler formulas (Python and native)
-- Model behavior
-- Procedural generation
-- System stepping
-- Presets
-
----
-
-## Tutorial notebook
+Tutorial notebook
 
 A full guided walkthrough is provided as a Jupyter notebook:
 
-- `solsysgen_tutorial.ipynb`
+solsysgen_tutorial.ipynb
 
 It demonstrates:
+
 - system generation
 - time stepping
-- Kepler helpers
+- Kepler helper functions
 - JSON export/import
-- NumPy checkpointing with `waterio`
+- NumPy checkpointing with WaterIO
+
+This notebook is suitable for:
+
+- a short technical presentation
+- self-guided learning
+- grading or review
 
 
-## Intended use
+Installation
 
-SolsysGen is suitable for:
+Basic installation
 
-- educational demos,
-- teaching orbital mechanics basics,
-- visualization experiments,
-- lightweight simulations where clarity matters more than realism.
+pip install -e .
 
-It is not intended for high-precision astrophysical modeling.
+This installs the pure-Python implementation.
+
+
+Optional native acceleration
+
+If a native or Cython backend is present, it will be used automatically.
+The project functions fully without it.
+
+
+Documentation
+
+API documentation is generated from docstrings using MkDocs:
+
+mkdocs serve
+
+Then open:
+
+http://127.0.0.1:8000/
+
+
+Testing
+
+Run the test suite with:
+
+pytest
+
+Tests cover:
+
+- Kepler formulas
+- model behavior
+- procedural generation
+- system stepping
+- JSON and checkpoint roundtrips
+
+
+Intended use
+
+SolsysGen and WaterIO are suitable for:
+
+- educational demos
+- teaching orbital mechanics basics
+- visualization experiments
+- lightweight simulations where clarity matters more than realism
+
+They are not intended for high-precision astrophysical modeling.
+
+
+
+
+
+

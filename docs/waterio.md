@@ -3,8 +3,8 @@
 ## Public API
 ::: waterio
 
-## Core implementations
+## Core implementation
 ::: waterio._core
 
-## NPZ checkpoint helpers
+## NPZ helpers
 ::: waterio.iodata
