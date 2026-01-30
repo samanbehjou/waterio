@@ -142,6 +142,19 @@ Tests cover:
 
 ---
 
+## Tutorial notebook
+
+A full guided walkthrough is provided as a Jupyter notebook:
+
+- `solsysgen_tutorial.ipynb`
+
+It demonstrates:
+- system generation
+- time stepping
+- Kepler helpers
+- JSON export/import
+- NumPy checkpointing with `waterio`
+
 
 ## Intended use
 
