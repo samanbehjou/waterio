@@ -159,11 +159,11 @@ Each example demonstrates a **single focused concept**.
 
 A full guided walkthrough is provided as a Jupyter notebook:
 
-```bash
-solsysgen_tutorial.ipynb
-```
 
--
+**solsysgen_tutorial.ipynb**
+
+
+---
 
 ### It demonstrates:
 
@@ -191,7 +191,7 @@ pip install -e .
 
 This installs the **pure-Python implementation**.
 
--
+---
 
 ### Optional native acceleration
 
@@ -231,7 +231,7 @@ pytest
 - JSON and checkpoint roundtrips
 
 ---
-### Intended use
+## Intended use
 
 SolsysGen and WaterIO are suitable for:
 
@@ -240,7 +240,7 @@ SolsysGen and WaterIO are suitable for:
 - visualization experiments
 - lightweight simulations where clarity matters more than realism
 
-They are not intended for high-precision astrophysical modeling.
+They are **not** intended for high-precision astrophysical modeling.
 
 
 
