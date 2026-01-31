@@ -1,0 +1,60 @@
+{
+  "sun": {
+    "name": "Sun",
+    "mass_kg": 1.9885e+30,
+    "radius_m": 696340000.0,
+    "luminosity_w": 3.828e+26
+  },
+  "planets": [
+    {
+      "name": "Planet 1",
+      "kind": "rocky",
+      "mass_kg": 2.5349927671096314e+25,
+      "radius_m": 8237110.52675001,
+      "distance_m": 84507682688.8733,
+      "phase_rad": 1.602645954842546,
+      "period_s": 13398571.503924917,
+      "orbital_speed_mps": 39629.406019811984
+    },
+    {
+      "name": "Planet 2",
+      "kind": "rocky",
+      "mass_kg": 1.3586185162645802e+25,
+      "radius_m": 7307988.477981741,
+      "distance_m": 189677948069.65094,
+      "phase_rad": 4.955694971284102,
+      "period_s": 45054634.7285797,
+      "orbital_speed_mps": 26451.92228472813
+    },
+    {
+      "name": "Planet 3",
+      "kind": "gas_giant",
+      "mass_kg": 3.458301802724271e+26,
+      "radius_m": 83995204.50808519,
+      "distance_m": 375328389504.31165,
+      "phase_rad": 2.7191556824922216,
+      "period_s": 125409758.58339317,
+      "orbital_speed_mps": 18804.42039709938
+    },
+    {
+      "name": "Planet 4",
+      "kind": "gas_giant",
+      "mass_kg": 2.0139213885518348e+26,
+      "radius_m": 67620178.47413914,
+      "distance_m": 884508910659.2611,
+      "phase_rad": 4.533569729745489,
+      "period_s": 453698692.282096,
+      "orbital_speed_mps": 12249.392572787458
+    },
+    {
+      "name": "Planet 5",
+      "kind": "ice_giant",
+      "mass_kg": 1.66493423621554e+26,
+      "radius_m": 29184401.58997122,
+      "distance_m": 1717267387629.4316,
+      "phase_rad": 0.1922025319432964,
+      "period_s": 1227357532.908501,
+      "orbital_speed_mps": 8791.170404016495
+    }
+  ]
+}
