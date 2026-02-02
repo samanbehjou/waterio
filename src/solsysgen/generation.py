@@ -5,9 +5,10 @@ import math
 import random
 from typing import List, Optional
 
-from .constants import AU_M
+from .constants import AU_M, DAY_S
 from .kepler import circular_speed_mps, period_s
 from .models import Planet, PlanetType, Sun
+from .planet import Planet
 
 
 def _snowline_au(luminosity_w: float) -> float:
@@ -100,3 +101,58 @@ def generate_planets(
 
     planets.sort(key=lambda p: p.distance_m)
     return planets
+
+
+def add_custom_planet(
+    system,
+    *,
+    name: str,
+    kind: PlanetType,
+    distance_au: float,
+    phase_deg: float = 0.0,
+    mass_kg: float = 5.972e24,  # default ~ Earth mass
+    radius_m: float = 6.371e6,  # default ~ Earth radius
+    allow_overlap: bool = False,
+) -> None:
+    """
+    Add a single user-defined planet to an existing SolarSystem.
+
+    Constraints:
+    - 2D circular orbit
+    - distance_au must be > 0
+    - phase_deg is wrapped into [0, 360)
+    - period and orbital speed are derived from Kepler using the system Sun mass
+    """
+
+    if distance_au <= 0:
+        raise ValueError("distance_au must be > 0")
+
+    distance_m = distance_au * AU_M
+
+    # Optional: avoid identical orbital radius
+    if not allow_overlap:
+        existing_m = [p.distance_m for p in system.planets]
+        if any(abs(distance_m - d) < 1e-3 for d in existing_m):
+            raise ValueError("A planet with the same orbital distance already exists.")
+
+    # Wrap phase into [0, 360)
+    phase_rad = math.radians(phase_deg % 360.0)
+
+    # Kepler-derived values
+    T = period_s(distance_m, system.sun.mass_kg)
+    v = circular_speed_mps(distance_m, system.sun.mass_kg)
+
+    # Create and append
+    p = Planet(
+        name=name,
+        kind=kind,
+        mass_kg=mass_kg,
+        radius_m=radius_m,
+        distance_m=distance_m,
+        phase_rad=phase_rad,
+        period_s=T,
+        orbital_speed_mps=v,
+    )
+
+    system.planets.append(p)
+    system.planets.sort(key=lambda pl: pl.distance_m)

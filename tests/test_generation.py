@@ -2,8 +2,9 @@ from __future__ import annotations
 
 import pytest
 
-from solsysgen import Sun, generate_planets
+from solsysgen import SolarSystem, Sun, generate_planets
 from solsysgen.constants import AU_M
+from solsysgen.generation import add_custom_planet
 
 
 def test_generate_planets_count_and_sorted():
@@ -33,3 +34,13 @@ def test_generate_planets_rejects_bad_args():
 
     with pytest.raises(ValueError):
         generate_planets(sun, 3, inner_au=10.0, outer_au=1.0)
+
+
+def test_add_custom_planet_increases_count():
+    sun = Sun()
+    planets = generate_planets(sun, 3, seed=0, inner_au=0.6, outer_au=5.0)
+    system = SolarSystem(sun=sun, planets=planets)
+
+    n0 = len(system.planets)
+    add_custom_planet(system, name="X", kind="rocky", distance_au=1.5, phase_deg=0.0)
+    assert len(system.planets) == n0 + 1
