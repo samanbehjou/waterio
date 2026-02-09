@@ -5,8 +5,9 @@ import math
 import random
 from typing import List, Optional
 
-from .constants import AU_M, DAY_S
+from .constants import AU_M
 from .kepler import circular_speed_mps, period_s
+# Feedback: Planet appears twice!
 from .models import Planet, PlanetType, Sun
 from .planet import Planet
 
