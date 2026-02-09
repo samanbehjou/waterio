@@ -45,14 +45,3 @@ jobs:
       - name: Run tests
         run: |
           python -m pytest -q
-          echo "pytest exit code: $?"
-          ls -la  # Check for missing files
-          pip list | grep coverage  # If coverage involved
-      - name: Upload coverage  # Example post-step
-        if: always()  # Run even on failure
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage
-          path: coverage.xml
-          if-no-files: ignore  # Prevents exit 1 on empty
-

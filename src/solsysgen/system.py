@@ -51,12 +51,12 @@ class SolarSystem:
 
     # Feedback: routine from notebook
     def propagate(self, no_steps=100, step_size=5):
-        """ Propagate the planets for a specific amount of time.
+        """Propagate the planets for a specific amount of time.
 
-            no_steps: number of steps.
-            step_size: time step in days.
+        no_steps: number of steps.
+        step_size: time step in days.
 
-            returns a NumPy array with the planet coordinates at each step.
+        returns a NumPy array with the planet coordinates at each step.
         """
 
         traj = np.zeros((no_steps + 1, len(self.planets), 2), dtype=np.float64)
@@ -73,10 +73,10 @@ class SolarSystem:
         return traj
 
     def plot(self, no_steps=100, step_size=5):
-        """ Plot the trajectory of the planets after propagating.
+        """Plot the trajectory of the planets after propagating.
 
-            no_steps: number of steps.
-            step_size: time step in days.
+        no_steps: number of steps.
+        step_size: time step in days.
         """
         traj = self.propagate(no_steps, step_size)
 
@@ -88,7 +88,9 @@ class SolarSystem:
         plt.scatter([0], [0], marker="*", s=120)  # Sun at origin
         plt.xlabel("x (AU)")
         plt.ylabel("y (AU)")
-        plt.title(f"Orbit trajectories (2D circular model) — steps={no_steps}, dt={dt/DAY_S:.0f} days")
+        plt.title(
+            f"Orbit trajectories (2D circular model) — steps={no_steps}, dt={dt/DAY_S:.0f} days"
+        )
         plt.axis("equal")
         plt.legend(loc="upper right", fontsize=8)
         plt.show()
