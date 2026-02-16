@@ -1,18 +1,91 @@
 # SolsysGen & WaterIO
 
-**SolsysGen** is a small Python library for building and simulating simple
-heliocentric planetary systems using **2D circular Keplerian orbits**.  
-**WaterIO** is a lightweight helper module for checkpointing NumPy arrays to
-compressed `.npz` files.
+<p align="center">
+  <img src="planetary_orbits.gif" width="600">
+</p>
 
-The project is intentionally minimal and educational:
+## Overview
 
-- no N-body gravity  
-- no orbital perturbations  
-- no external physics engines  
+**SolsysGen** is a lightweight Python library for generating and simulating
+deterministic heliocentric planetary systems using a simplified
+**2D circular Keplerian model**.
 
-It focuses on **clarity**, **determinism**, and **reproducibility**, rather than
-physical completeness.
+**WaterIO** is a companion module providing robust and minimal
+checkpointing utilities for NumPy arrays via compressed `.npz` files.
+
+This project was designed as an educational and reproducible framework
+for exploring orbital mechanics concepts without the complexity of
+full N-body gravitational simulations.
+
+---
+
+## Motivation
+
+When learning orbital mechanics or building procedural simulations,
+it is often difficult to connect:
+
+- mathematical equations (Kepler’s laws),
+- simulation code,
+- visual output,
+- and persistent storage of results.
+
+SolsysGen provides a minimal, transparent implementation that bridges
+these components in a clear and reproducible way.
+
+The goal is not astrophysical realism, but:
+
+- conceptual clarity
+- deterministic behavior
+- reproducibility
+- clean architecture
+- modular extensibility
+
+---
+
+## Modeling Assumptions
+
+The system follows a simplified heliocentric model:
+
+- One central **Sun**
+- Multiple **Planets**
+- Coplanar, circular orbits
+- Motion derived from **Kepler’s third law**
+- No N-body gravity
+- No perturbations
+- No orbital migration
+- No relativistic corrections
+
+All physical quantities are stored internally in **SI units**.
+
+This makes the system:
+
+- stable
+- deterministic
+- computationally inexpensive
+- ideal for teaching and demonstrations
+
+---
+
+## Design Philosophy
+
+Unlike physics engines or astrophysical simulators, this project prioritizes:
+
+- Readable source code
+- Minimal dependencies
+- Reproducible procedural generation
+- Clean separation of concerns
+- JSON export for structural reproducibility
+- NPZ checkpointing for numerical reproducibility
+
+It is suitable for:
+
+- educational demos
+- procedural system generation experiments
+- visualization pipelines
+- lightweight research prototypes
+- academic presentations
+
+It is **not intended** for high-precision astrophysical modeling.
 
 
 ---
