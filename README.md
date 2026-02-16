@@ -193,7 +193,6 @@ This notebook is suitable for:
 
 ```bash
 pip install cython
-pip install -e .
 ```
 
 Development Installation
