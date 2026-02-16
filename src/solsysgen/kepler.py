@@ -14,6 +14,11 @@ were reviewed and approved by the project author.
 """
 
 
+# Feedback: it would be good to document in the docstrings
+# the parameters used by these routines:
+# distance_m: the distance from the planet to the sun in m
+# central_mass_kg: the mass of the sun in kg
+# etc.
 def period_s(distance_m: float, central_mass_kg: float) -> float:
     """
     Kepler's 3rd law (two-body approx, circular orbit):
