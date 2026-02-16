@@ -183,13 +183,31 @@ This notebook is suitable for:
 
 ## Installation
 
-### Basic installation
+### Requirements
+
+- Python ≥ 3.10
+- pip
+- (optional) C/C++ compiler for native extension
+
+### Basic Installation (Pure Python)
 
 ```bash
+pip install cython
 pip install -e .
 ```
 
-This installs the **pure-Python implementation**.
+Development Installation
+
+```bash
+pip install -e .
+pip install -r requirements.txt
+```
+
+Optional:
+
+```bash
+pre-commit install
+```
 
 ---
 
@@ -200,7 +218,7 @@ The project functions fully **without** it.
 
 ---
 
-## Documentation
+## Building Documentation
 
 API documentation is generated from docstrings using MkDocs:
 
@@ -229,6 +247,7 @@ pytest
 - procedural generation
 - system stepping
 - JSON and checkpoint roundtrips
+- NumPy checkpointing
 
 ---
 ## Intended use
