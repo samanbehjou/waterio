@@ -260,8 +260,9 @@ SolsysGen and WaterIO are suitable for:
 
 They are **not** intended for high-precision astrophysical modeling.
 
+---
+## Acknowledgement
 
 
-
-
+This README was generated and prepared with the help of **AI** tools. The content was tailored to provide a clear and concise overview of the installation steps and project setup for users and developers.
 
