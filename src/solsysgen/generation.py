@@ -8,7 +8,6 @@ from typing import List, Optional
 from .constants import AU_M, DAY_S
 from .kepler import circular_speed_mps, period_s
 from .models import Planet, PlanetType, Sun
-from .planet import Planet
 
 
 def _snowline_au(luminosity_w: float) -> float:
