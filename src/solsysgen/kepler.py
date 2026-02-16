@@ -5,6 +5,14 @@ import math
 
 from .constants import TAU, G
 
+"""
+AI Assistance Notice
+
+This module was refactored and polished with the assistance of AI-based tools.
+All architectural decisions, implementation logic, testing, and final validation
+were reviewed and approved by the project author.
+"""
+
 
 def period_s(distance_m: float, central_mass_kg: float) -> float:
     """

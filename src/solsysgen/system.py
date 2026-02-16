@@ -6,6 +6,14 @@ from typing import Any, Dict, Iterable, Iterator, List, Tuple
 
 from .models import Planet, Sun
 
+"""
+AI Assistance Notice
+
+This module was refactored and polished with the assistance of AI-based tools.
+All architectural decisions, implementation logic, testing, and final validation
+were reviewed and approved by the project author.
+"""
+
 
 @dataclass(slots=True)
 class SolarSystem:

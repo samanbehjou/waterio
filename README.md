@@ -337,5 +337,7 @@ They are **not** intended for high-precision astrophysical modeling.
 ## Acknowledgement
 
 
-This README was generated and prepared with the help of **AI** tools. The content was tailored to provide a clear and concise overview of the installation steps and project setup for users and developers.
+Portions of this project, including parts of the documentation and selected code refactoring steps, were developed and refined with the assistance of **AI-based** tools.
+
+All architectural decisions, implementation logic, testing, and final validation were carried out and reviewed by the project **author** to ensure correctness, clarity, and reproducibility.
 

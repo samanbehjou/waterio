@@ -9,6 +9,14 @@ from .constants import AU_M, DAY_S
 from .kepler import circular_speed_mps, period_s
 from .models import Planet, PlanetType, Sun
 
+"""
+AI Assistance Notice
+
+This module was refactored and polished with the assistance of AI-based tools.
+All architectural decisions, implementation logic, testing, and final validation
+were reviewed and approved by the project author.
+"""
+
 
 def _snowline_au(luminosity_w: float) -> float:
     """

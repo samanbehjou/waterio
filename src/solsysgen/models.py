@@ -4,6 +4,15 @@ import math
 from dataclasses import dataclass
 from typing import Any, Dict, Literal, Tuple
 
+"""
+AI Assistance Notice
+
+This module was refactored and polished with the assistance of AI-based tools.
+All architectural decisions, implementation logic, testing, and final validation
+were reviewed and approved by the project author.
+"""
+
+
 PlanetType = Literal["rocky", "gas_giant", "ice_giant", "dwarf"]
 
 
