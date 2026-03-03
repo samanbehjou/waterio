@@ -1,6 +1,8 @@
 import numpy as np
 
-
+# Feedback: you already had a very good starting point!
+# You only needed to compute the angular velocity based on Kepler's law
+# and that was it!
 class Planet:
     """
     Represents a planet in the solar system.
@@ -34,6 +36,12 @@ class Planet:
         self.mass = mass
         self.radius = radius
         self.distance = distance
+
+        # Feedback: here, I would call it angular velocity and
+        # I would set it to None, then calculate it when the planet is added
+        # to the solar system based on Kepler's law.
+        # You could have another instance variable called
+        # orbital_period (T) also None here.
         self.velocity = velocity
         self.angle = angle  # orbital phase angle in radians
 

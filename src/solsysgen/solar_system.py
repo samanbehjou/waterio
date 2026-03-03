@@ -19,6 +19,9 @@ class SolarSystem:
         self.sun = sun
         self.planets: list[Planet] = []
 
+	# Feedback: here you could calculate the orbital period and velocity
+	# based on Kepler's law for each planet.
+	# (this could be the routine in C/C++)
     def add_planet(self, planet: Planet):
         """Add a planet to the solar system."""
         self.planets.append(planet)
